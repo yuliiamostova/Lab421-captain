@@ -10,3 +10,11 @@ def gcd(a: int, b: int) -> int:
     while b != 0:
         a, b = b, a % b
     return a
+    
+def readfile(file):
+    try:
+        with open(file, encoding="utf=8") as f:
+            for line in f:
+                print(line.strip())
+    except FileNotFoundError as fnf_err:
+        print(f"Файл {fnf_err.filename} не знайдено")
